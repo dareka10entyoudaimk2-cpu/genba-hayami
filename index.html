@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b5cad">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<title>現場早見表</title>
+<style>
+:root{--bg:#fff;--fg:#111;--sub:#555;--line:#ccc;--head:#eef3f8;--acc:#0b5cad;--warn:#fff4d6;--mine:#e8f6ea}
+@media (prefers-color-scheme:dark){:root{--bg:#121212;--fg:#eee;--sub:#aaa;--line:#444;--head:#1f2a36;--acc:#6db3ff;--warn:#3a3220;--mine:#1d3322}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:18px/1.6 system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;padding:0 16px 80px}
+header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 0;z-index:9}
+h1{font-size:20px;margin:0 0 6px}
+nav{display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav a{flex:0 0 auto;padding:8px 12px;border:1px solid var(--line);border-radius:20px;color:var(--acc);text-decoration:none;font-size:16px}
+h2{font-size:21px;margin:28px 0 8px;border-left:6px solid var(--acc);padding-left:8px;scroll-margin-top:110px}
+h3{font-size:18px;margin:18px 0 6px;scroll-margin-top:110px}
+.wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:6px}
+table{border-collapse:collapse;min-width:100%;font-size:17px}
+th,td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:right;white-space:nowrap}
+th{background:var(--head)}
+td:first-child,th:first-child{text-align:left;position:sticky;left:0;background:var(--bg)}
+th:first-child{background:var(--head)}
+td.l{text-align:left;white-space:normal;min-width:9em}
+td small{color:var(--sub);font-size:14px}
+tr.mine td{background:var(--mine)}
+b.big{font-size:20px}
+.note{background:var(--warn);padding:8px 10px;border-radius:6px;font-size:15px;margin:8px 0}
+ul.pt{padding-left:20px;margin:6px 0}
+ul.pt li{margin:4px 0}
+</style>
+</head>
+<body>
+<header>
+<h1>現場早見表</h1>
+<nav>
+<a href="#taka">取付高さ</a><a href="#sq">直径とsq</a><a href="#vvf">VVF</a><a href="#cv">CV・CVT</a><a href="#iv">IV</a><a href="#br">ブレーカーと太さ</a><a href="#sb">契約SBとELB</a>
+</nav>
+</header>
+
+<h2 id="taka">取付高さ</h2>
+<div class="wrap"><table>
+<tr><th>器具（どこから）</th><th>高さ</th></tr>
+<tr><td>スイッチ<br><small>床から</small></td><td><b class="big">1270</b>mm</td></tr>
+<tr><td>コンセント<br><small>床から</small></td><td><b class="big">300</b>mm</td></tr>
+<tr><td>冷蔵庫コンセント<br><small>床から</small></td><td><b class="big">1800</b>mm</td></tr>
+<tr><td>エアコンコンセント<br><small>天井から下へ（AC本体の上か下に来る位置）</small></td><td><b class="big">400</b>mm</td></tr>
+<tr><td>電子錠・ブースター<br><small>天井から下へ</small></td><td><b class="big">150</b>mm</td></tr>
+<tr><td>階段<br><small>1段の高さ</small></td><td><b class="big">200</b>mm</td></tr>
+<tr><td>外部コンセント<br><small>水切りから</small></td><td><b class="big">400</b>mm</td></tr>
+<tr><td>メーター<br><small>水切りから（配管高さ）</small></td><td><b class="big">1200</b>mm</td></tr>
+<tr><td>インターホン<br><small>土間から（配管高さ）</small></td><td><b class="big">1200〜1300</b>mm</td></tr>
+</table></div>
+
+<h2 id="sq">直径とsq（断面積）</h2>
+<div class="wrap"><table>
+<tr><th>単線の直径</th><th>断面積</th><th>近いより線</th></tr>
+<tr><td>1.6mm</td><td>約2.0sq</td><td>2sq</td></tr>
+<tr><td>2.0mm</td><td>約3.1sq</td><td>3.5sq</td></tr>
+<tr><td>2.6mm</td><td>約5.3sq</td><td>5.5sq</td></tr>
+<tr><td>3.2mm</td><td>約8.0sq</td><td>8sq</td></tr>
+</table></div>
+
+<h2 id="vvf">VVF（平形ケーブル）の許容電流</h2>
+<p class="note">40℃・気中。管・断熱材の中は下がる</p>
+<div class="wrap"><table>
+<tr><th>太さ</th><th>2心</th><th>3心</th></tr>
+<tr><td>1.6mm</td><td>18A</td><td>15A</td></tr>
+<tr><td>2.0mm</td><td>23A</td><td>20A</td></tr>
+<tr><td>2.6mm</td><td>32A</td><td>27A</td></tr>
+<tr><td>2sq</td><td>18A</td><td>15A</td></tr>
+<tr><td>3.5sq</td><td>25A</td><td>21A</td></tr>
+<tr><td>5.5sq</td><td>33A</td><td>28A</td></tr>
+<tr><td>8sq</td><td>42A</td><td>36A</td></tr>
+<tr><td>14sq</td><td>59A</td><td>50A</td></tr>
+</table></div>
+
+<h2 id="cv">CV・CVT の許容電流</h2>
+<p class="note">40℃・気中・1条<br><b>単相3線（100/200V）</b>→ CV<b>2心</b>・CVT<b>2個より</b>の列<br><b>三相3線</b>→ CV<b>3心</b>・CVT<b>3個より</b>の列</p>
+<div class="wrap"><table>
+<tr><th>sq</th><th>CV 2心</th><th>CVT 2個より</th><th>CV 3心</th><th>CVT 3個より</th></tr>
+<tr><td>2</td><td>28A</td><td>—</td><td>23A</td><td>—</td></tr>
+<tr><td>3.5</td><td>39A</td><td>—</td><td>33A</td><td>—</td></tr>
+<tr><td>5.5</td><td>52A</td><td>—</td><td>44A</td><td>—</td></tr>
+<tr><td>8</td><td>65A</td><td>66A</td><td>54A</td><td>62A</td></tr>
+<tr><td>14</td><td>91A</td><td>91A</td><td>76A</td><td>86A</td></tr>
+<tr><td>22</td><td>120A</td><td>120A</td><td>100A</td><td>110A</td></tr>
+<tr><td>38</td><td>170A</td><td>165A</td><td>140A</td><td>155A</td></tr>
+<tr><td>60</td><td>225A</td><td>225A</td><td>190A</td><td>210A</td></tr>
+<tr><td>100</td><td>310A</td><td>310A</td><td>260A</td><td>290A</td></tr>
+</table></div>
+
+<h2 id="iv">IV（電線）の許容電流</h2>
+<p class="note">30℃・管なし</p>
+<div class="wrap"><table>
+<tr><th>太さ</th><th>管なし</th><th>管内3本以下<br>×0.70</th><th>管内4本<br>×0.63</th><th>管内5〜6本<br>×0.56</th></tr>
+<tbody id="ivBody"></tbody>
+</table></div>
+
+<h2 id="br">ブレーカーと電線の太さ（分岐回路）</h2>
+<div class="wrap"><table>
+<tr><th>分岐ブレーカー</th><th>電線の太さ</th><th>付けられるコンセント</th></tr>
+<tr><td>〜15A</td><td>1.6mm以上</td><td>15A以下</td></tr>
+<tr class="mine"><td>15A超〜20A<br><small>配線用遮断器</small></td><td>1.6mm以上</td><td>20A以下</td></tr>
+<tr><td>15A超〜20A<br><small>ヒューズ等</small></td><td>2.0mm以上</td><td>20A</td></tr>
+<tr class="mine"><td>20A超〜30A</td><td>2.6mm以上</td><td>20A〜30A</td></tr>
+<tr><td>30A超〜40A</td><td>8sq以上</td><td>30A〜40A</td></tr>
+<tr><td>40A超〜50A</td><td>14sq以上</td><td>40A〜50A</td></tr>
+</table></div>
+
+<h2 id="sb">契約SBとELBの違い</h2>
+<div class="wrap"><table>
+<tr><th></th><th>契約ブレーカー（SB）</th><th>漏電遮断器（ELB）</th></tr>
+<tr><td>役目</td><td class="l">契約アンペアを超えたら切る</td><td class="l">漏電したら切る</td></tr>
+<tr><td>付ける人</td><td class="l">北電NW（スマメ内蔵でSB無しも）</td><td class="l">こちら（分電盤）</td></tr>
+<tr><td>大きさ</td><td class="l">契約で決まる（10〜60A）</td><td class="l">契約と無関係</td></tr>
+</table></div>
+<ul class="pt">
+<li>北電 従量電灯B：<b>10・15・20・30・40・50・60A</b></li>
+<li>60A超 → <b>従量電灯C（6kVA以上）</b></li>
+<li>計器SB付きスマメに<b>38sq以上はつなげない</b></li>
+</ul>
+
+
+<script>
+var IV=[["1.6mm",27],["2.0mm",35],["2.6mm",48],["3.2mm",62],["2sq",27],["3.5sq",37],["5.5sq",49],["8sq",61],["14sq",88],["22sq",115],["38sq",162],["60sq",217],["100sq",298]];
+var body=document.getElementById("ivBody");
+IV.forEach(function(r){
+  var tr=document.createElement("tr");
+  tr.innerHTML="<td>"+r[0]+"</td><td>"+r[1]+"A</td>"+[0.70,0.63,0.56].map(function(k){return "<td>"+Math.floor(r[1]*k)+"A</td>"}).join("");
+  body.appendChild(tr);
+});
+if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js")}
+</script>
+</body>
+</html>
